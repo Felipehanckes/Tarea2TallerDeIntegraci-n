@@ -7,7 +7,7 @@ class Ingredient(models.Model):
     descripcion = models.TextField()
 
     def __str__(self):
-        return "%s, %s" % (self.name, self.description)
+        return "%s" % (self.nombre)
 
 class Burguer(models.Model):
     nombre = models.CharField(max_length=30)
@@ -17,4 +17,4 @@ class Burguer(models.Model):
     ingredientes = models.ManyToManyField(Ingredient)
 
     def __str__(self):
-        return "%s" % (self.name)
+        return "%s" % (self.nombre)
