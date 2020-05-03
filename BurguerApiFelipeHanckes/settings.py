@@ -28,7 +28,7 @@ SECRET_KEY = '3pur-u-cw&of=)*(gf7vzx1hjg6%i$%@4ncl*@h3b7)82f*940'
 DEBUG = False
 
 ALLOWED_HOSTS = ['tarea2apifeha.herokuapp.com']
-
+ 
 
 # Application definition
 
