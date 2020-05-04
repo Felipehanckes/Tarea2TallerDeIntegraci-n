@@ -19,10 +19,13 @@ class BurguerList(APIView):
 
     def post(self, request, format=None):
         request2 = request.data.copy()
-        ingredientes = request2.__getitem__('ingredientes').replace(' ','')
-        ingredientes = ingredientes.split(',')
-        ingredientes = [int(x) for x in ingredientes if x != '']
-        request2.setlist('ingredientes', ingredientes)
+        try:
+            ingredientes = request2.__getitem__('ingredientes').replace(' ','')
+            ingredientes = ingredientes.split(',')
+            ingredientes = [int(x) for x in ingredientes if x != '']
+            request2.setlist('ingredientes', ingredientes)
+        except:
+            pass
         serializer = BurguerSerializer(data=request2)
         if serializer.is_valid():
             serializer.save()
