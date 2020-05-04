@@ -13,8 +13,8 @@ class Burguer(models.Model):
     nombre = models.CharField(max_length=30)
     precio = models.IntegerField()
     descripcion = models.TextField()
-    imagen = models.TextField()
-    ingredientes = models.ManyToManyField(Ingredient)
+    imagen = models.TextField(blank=True)
+    ingredientes = models.ManyToManyField(Ingredient, blank=True)
 
     def __str__(self):
         return "%s" % (self.nombre)
