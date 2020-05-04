@@ -126,7 +126,7 @@ class IngredientDetail(APIView):
         try:
             Burguer.objects.filter(ingredientes=pk)[0]
             return Response("No se puede eliminar el Ingrediente, ya que " + 
-            "es el ingrediente de una hamburguesa", status=status.HTTP_400_BAD_REQUEST)
+            "es el ingrediente de una hamburguesa", status=status.HTTP_409_CONFLICT)
         except:
             print("no se encontro ingrediente en las burgas")
         ingredient = self.get_object(pk)
